@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Signup Page -->
+    <div id="signup-page" class="page active">
+        <div class="container">
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" required>
+                  
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="login-link">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+        <div class="container">
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                   
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="signup-link">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Quiz Selection Page -->
+    <div id="quiz-selection" class="page">
+        <div class="container">
+            <h2>Welcome, <span id="user-name"></span>!</h2>
+            <div class="logout-btn" id="logout-btn">Logout</div>
+            
+            <div class="selection-container">
+                <h3>Select Subject</h3>
+                <div class="subjects">
+                    <button class="subject-btn" data-subject="biology">Biology</button>
+                    <button class="subject-btn" data-subject="physics">Physics</button>
+                    <button class="subject-btn" data-subject="chemistry">Chemistry</button>
+                    <button class="subject-btn" data-subject="math">Mathematics</button>
+                </div>
+
+                <h3>Select Difficulty</h3>
+                <div class="difficulties">
+                    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+
+                <button id="start-quiz" class="start-btn">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions Page -->
+    <div id="questions-page" class="page">
+        <div class="container">
+            <div class="quiz-header">
+                <span id="question-number"></span>
+                <span id="score-display"></span>
+            </div>
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+            </div>
+            <button id="next-btn" class="next-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- Score Page -->
+    <div id="score-page" class="page">
+        <div class="container">
+            <div class="trophy-icon">🏆</div>
+            <h2>Your Score: <span id="final-score"></span></h2>
+            <p>Great effort! Let's see what we have to say about your performance.</p>
+            <button id="see-encouragement" class="encouragement-btn">See Encouragement</button>
+            <div class="logout-btn" id="logout-btn">Logout</div>
+        </div>
+    </div>
+
+    <!-- Encouragement Page -->
+    <div id="encouragement-page" class="page">
+        <div class="container">
+            <div class="sparkle-icon">✨</div>
+            <h2>Words of Encouragement</h2>
+            <p id="encouragement-text"></p>
+            <button id="try-again" class="try-again-btn">Try Another Quiz</button>
+        </div>
+        <div class="logout-btn" id="logout-btn">Logout</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

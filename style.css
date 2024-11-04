@@ -1,0 +1,188 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration-color: black;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+    background-color: #667eea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #5a67d8;
+}
+
+/* Quiz Selection Styles */
+.selection-container {
+    margin-top: 2rem;
+}
+
+.subjects, .difficulties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.subject-btn, .difficulty-btn {
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    background: white;
+    color: #4a5568;
+    transition: all 0.2s;
+}
+
+.subject-btn.selected, .difficulty-btn.selected {
+    border-color: #667eea;
+    background: #ebf4ff;
+    color: #667eea;
+}
+
+.start-btn {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+/* Questions Page Styles */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+#options-container {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.option {
+    padding: 1rem;
+    background: #111111;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option:hover {
+    background: #8b99aa;
+    border-color: #667eea;
+}
+
+.option.selected {
+    background: #fcfcfd;
+    color: rgb(14, 13, 13);
+    border-color: #5a67d8;
+}
+
+/* Score and Encouragement Pages */
+.trophy-icon, .sparkle-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#final-score {
+    color: #667eea;
+    font-weight: bold;
+}
+
+.encouragement-btn, .try-again-btn {
+    display: block;
+    margin: 2rem auto 0;
+}
+
+/* Logout Button */
+.logout-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .subjects, .difficulties {
+        grid-template-columns: 1fr;
+    }
+}
