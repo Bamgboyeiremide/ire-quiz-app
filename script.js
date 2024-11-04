@@ -521,6 +521,7 @@ const quizQuestions = {
             }
         ]
     },
+    math :{
     easy: [
         {
             question: "What is 5 + 3?",
@@ -677,7 +678,7 @@ const quizQuestions = {
             correctAnswer: 0
         }
     ]
-
+}
 
 
 
@@ -809,6 +810,52 @@ const encouragements = [
     "Keep pushing forward - you're capable of amazing things!",
     "Your curiosity and determination will take you far!"
 ];
+const stars = document.querySelectorAll('.star');
+const ratingValueDisplay = document.getElementById('rating-value');
+
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-value');
+        updateRating(rating);
+    });
+
+    star.addEventListener('mouseover', () => {
+        resetStars();
+        highlightStars(star.getAttribute('data-value'));
+    });
+
+    star.addEventListener('mouseleave', () => {
+        resetStars();
+        updateRatingDisplay();
+    });
+});
+
+let currentRating = 0;
+
+function updateRating(rating) {
+    currentRating = rating;
+    updateRatingDisplay();
+    resetStars();
+    highlightStars(rating);
+}
+
+function highlightStars(rating) {
+    stars.forEach(star => {
+        if (star.getAttribute('data-value') <= rating) {
+            star.classList.add('selected');
+        }
+    });
+}
+
+function resetStars() {
+    stars.forEach(star => {
+        star.classList.remove('selected');
+    });
+}
+
+function updateRatingDisplay() {
+    ratingValueDisplay.textContent = `Rating: ${currentRating}`;
+}
 
 document.getElementById('see-encouragement').addEventListener('click', () => {
     const randomEncouragement = encouragements[Math.floor(Math.random() * encouragements.length)];

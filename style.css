@@ -101,6 +101,23 @@ button:hover {
     background: #ebf4ff;
     color: #667eea;
 }
+.rating {
+    display: flex;
+    justify-content: center;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+    color: gold;
+}
 
 .start-btn {
     width: 100%;
